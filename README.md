@@ -1,19 +1,3 @@
-Alright — I’ll merge both into one **final, polished README** that has:
-
-* A clear introduction & project description
-* Technologies used
-* Full directory tree
-* Setup & run instructions from your old file
-* API documentation with examples
-* Troubleshooting from your old file
-* Deployment notes for EC2
-* Security notes
-
-Here’s your final README:
-
----
-
-```markdown
 # 📝 Flask Notes Webapp — Docker Compose (Flask + MySQL)
 
 ## 📌 Overview
