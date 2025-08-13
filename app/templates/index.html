@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Notes</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <style>
+    body { font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial; margin: 2rem; max-width: 720px; }
+    h1 { margin-bottom: 1rem; }
+    form { display: flex; gap: .5rem; margin-bottom: 1rem; }
+    textarea { width: 100%; height: 3rem; }
+    button { padding: .6rem 1rem; cursor: pointer; }
+    .note { padding: .75rem 1rem; border: 1px solid #ddd; border-radius: 8px; margin-bottom: .5rem; }
+    .meta { color: #666; font-size: .9rem; }
+  </style>
+</head>
+<body>
+  <h1>Notes</h1>
+  <form method="post" action="/notes">
+    <textarea name="content" placeholder="Write a note..." required></textarea>
+    <button type="submit">Add</button>
+  </form>
+
+  {% if notes and notes|length > 0 %}
+    {% for n in notes %}
+      <div class="note">
+        <div>{{ n.content }}</div>
+        <div class="meta">#{{ n.id }} • {{ n.created_at }}</div>
+      </div>
+    {% endfor %}
+  {% else %}
+    <p>No notes yet. Add one!</p>
+  {% endif %}
+</body>
+</html>
